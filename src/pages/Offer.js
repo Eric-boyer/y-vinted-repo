@@ -1,5 +1,6 @@
- function offer () {
+ const Offer = () =>{
 
-    return <div className="pageOffers"> Offre</div>
-}
-export default offer;
+    return <div>heyyyyy!!!</div>
+ }
+
+ export default Offer
