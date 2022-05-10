@@ -29,24 +29,33 @@ const Offer = () => {
     <div>En cours de chargement...</div>
   ) : (
     <div>
+       
+      <div className="profil">
+        <div className="photoprofil">
+          <img className="avatar" src={data.owner.account.avatar.secure_url} alt="avatar" />
+        </div>
+        <p>{data.owner.account.username}</p>
+      </div>
       {data.product_pictures[0] && (
-        <img src={data.product_pictures[0].secure_url} alt="" />
+        <img className= "av" src={data.product_pictures[0].secure_url} alt="" />
       )}
       <h2>{data.product_name}</h2>
       <span>{data.product_price}</span>
+      
       <div>
+     
         {data.product_details.map((item, index) => {
           console.log(item);
-
           const keys = Object.keys(item);
-
           return (
             <div key={index}>
               {keys[0]} : {item[keys[0]]}
             </div>
+           
           );
         })}
       </div>
+      <button>Acheter</button>
     </div>
   );
 };

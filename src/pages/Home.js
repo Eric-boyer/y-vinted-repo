@@ -44,7 +44,7 @@ const Home = () => {
       
       <div className="offers-parent">
 
-
+      
         {data.offers.map((offer) => {
           return (
             <Link to={`/offer/${offer._id}`} key={offer._id}>
@@ -53,7 +53,7 @@ const Home = () => {
                   <h4> {offer.product_name}</h4>
                 </div>
                 <div className="pictures-containers">
-                  <img src={offer.product_image.secure_url} alt="" />
+                  <img className="pictures" src={offer.product_image.secure_url} alt="" />
                 </div>
               </div>
             </Link>

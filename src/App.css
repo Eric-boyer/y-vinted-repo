@@ -51,18 +51,21 @@ button {
 .offers-parent {
   max-width: 1241px;
   max-height: auto;
-  border: chartreuse solid 2px;
-  background-color: red;
+  
+  
+  
+ 
   margin-left: 90px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 30px;
+  
 }
 .toto {
   max-height: 80px;
   max-width: 270px;
-  border: black solid 2px;
+ 
 }
 img {
   max-height: 100%;
@@ -72,11 +75,27 @@ img {
 .pictures-containers {
   height: 270px;
   width: 270px;
-  border: white solid 2px;
+ 
+}
+.pictures{
+max-height: 100% ;
+    border-radius: 15%;
 }
 .Signup-container{
    margin-top: 200px;
    margin-left: 350px;
     max-height: 0 auto;
     max-width: 800px;
+}
+.profil{
+    display: flex
+}
+
+.avatar{
+    border-radius: 50%;
+   height: 40px;
+   
+}
+.av{
+    border-radius: 12%;
 }

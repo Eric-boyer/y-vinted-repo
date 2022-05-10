@@ -8,6 +8,7 @@ import Cookies from "js-cookie";
 import { useState } from "react";
 import Header from "./components/Header";
 import Pub from "./pages/Pub";
+import Pay from "./pages/Pay";
 
 function App() {
   const [token, setToken] = useState(Cookies.get("userToken") || null);
@@ -33,6 +34,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/offer/:id" element={<Offer />} />
           <Route path="/pub" element={<Pub token={token} />} />
+          <Route path="/pay" element={<Pay/>}/>
         </Routes>
       </Router>
     </>
