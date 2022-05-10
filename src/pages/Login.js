@@ -6,11 +6,13 @@ import Cookies from "js-cookie";
 const Login = ({ setToken }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
 
   const handleLogin = async (event) => {
     try {
       event.preventDefault();
+      setErrorMessage("");
       const user = {
         email: email,
         password: password,
@@ -22,14 +24,18 @@ const Login = ({ setToken }) => {
 
       const token = response.data.token;
     if (token){
-
+     console.log("Bravo")
       Cookies.set("token",token);
       setToken(token);
       navigate("/");
     }
      
     } catch (error) {
-      console.log(error);
+      console.log(error.message);
+      console.log(error.response.status)
+      if (error.response.status === 401){
+        setErrorMessage("veuillez sairir le bon mot de passe ou la bonne adresse email")
+      }
     }
   };
 
@@ -52,6 +58,8 @@ const Login = ({ setToken }) => {
 
       <br />
       <input type="submit" value="Se connecter" />
+      <h2 style={{ color: "red" }}>{errorMessage}</h2>
+
     </form>
   );
 };
