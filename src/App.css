@@ -5,7 +5,6 @@
 .countainer {
   height: 120px;
   width: 0 auto;
- 
 }
 .secondcoun {
   display: flex;
@@ -51,21 +50,16 @@ button {
 .offers-parent {
   max-width: 1241px;
   max-height: auto;
-  
-  
-  
- 
+
   margin-left: 90px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 30px;
-  
 }
 .toto {
   max-height: 80px;
   max-width: 270px;
- 
 }
 img {
   max-height: 100%;
@@ -75,27 +69,25 @@ img {
 .pictures-containers {
   height: 270px;
   width: 270px;
- 
 }
-.pictures{
-max-height: 100% ;
-    border-radius: 15%;
+.pictures {
+  max-height: 100%;
+  border-radius: 15%;
 }
-.Signup-container{
-   margin-top: 200px;
-   margin-left: 350px;
-    max-height: 0 auto;
-    max-width: 800px;
+.Signup-container {
+  margin-top: 200px;
+  margin-left: 350px;
+  max-height: 0 auto;
+  max-width: 800px;
 }
-.profil{
-    display: flex
+.profil {
+  display: flex;
 }
 
-.avatar{
-    border-radius: 50%;
-   height: 40px;
-   
+.avatar {
+  border-radius: 50%;
+  height: 40px;
 }
-.av{
-    border-radius: 12%;
+.av {
+  border-radius: 12%;
 }

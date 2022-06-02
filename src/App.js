@@ -25,7 +25,7 @@ function App() {
   return (
     <>
       <Router>
-        <Header token ={token} setUser={setUser}/>
+        <Header token ={token} setUser={setUser}  />
         <Routes>
           <Route path="/signup" element={<Signup setUser={setUser} />} />
 

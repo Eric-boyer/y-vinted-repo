@@ -5,6 +5,7 @@ import axios from "axios";
 // import permettant le lien entre mes pages
 import { Link } from "react-router-dom";
 
+
 import banniere from "../img/banniere.jpeg";
 
 const Home = () => {
@@ -14,31 +15,36 @@ const Home = () => {
   // usestate me permet de faire mon booléen pour passer a la page suivante une fois que mes données sont okk
   const [isLoading, setIsLoading] = useState(true);
   // absolent nécessaire pour faire un async await(ps: j'aurais pu appeler la variable fetchdata comme je veux)
-  
+  const [searchinput, setSearchInput] = useState("");
+  const [values, setValues] = useState([0, 250]);
+  const [sort, setSort] = useState("price-desc");
+  const [switchpage, setSwitchPage] = useState(1);
+  const [limit, setLimit] = useState(20);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://lereacteur-vinted-api.herokuapp.com/offers"
+          `https://lereacteur-vinted-api.herokuapp.com/offers?title=${searchinput}&priceMin=${values[0]}&priceMax=${values[1]}&sort=${sort}&limit=${limit}&page=${switchpage}`
         );
-        //console.log(response.data);
+        console.log(response.data);
         setData(response.data);
         setIsLoading(false);
+        
       } catch (error) {
         console.log(error);
       }
     };
-
     fetchData();
-  }, []);
+   
+  }, [searchinput,values,sort,switchpage,limit]);
  
 
   return isLoading === true ? (
     <div>En cours de chargement....</div>
   ) : (
     <>
-      <img src={banniere} alt=""></img>
+      <img style={{height:84}} src={banniere} alt=""></img>
       <h3>Articles Populaires</h3>
        
       

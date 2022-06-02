@@ -17,6 +17,7 @@ const Offer = () => {
         //   console.log(response.data);
         setData(response.data);
         setIsLoading(false);
+       
       } catch (error) {
         console.log(error);
       }

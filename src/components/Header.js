@@ -1,15 +1,24 @@
 import logo from "../img/logo.jpeg";
-import { Link, useNavigate } from "react-router-dom";
-const Header = ({ token, setUser }) => {
+import { Link, useNavigate,useLocation } from "react-router-dom";
+
+
+const Header = ({ token, setUser,setSearchInput,values, setValues,}) => {
+  const location = useLocation();
   const navigate = useNavigate();
   return (
+    <>
+   
     <div className="countainer">
       <div className="secondcoun">
         <img className="logo" src={logo} alt="vinted" />
-        <input
+        <input onChange={(event)=>{
+          setSearchInput(event.target.value)
+        }}
           className="firstput"
           placeholder="Rechercher des articles"
         ></input>
+        
+             
         <div>
           <Link to="/Signup">
             <button> S'inscrire</button>
@@ -31,8 +40,15 @@ const Header = ({ token, setUser }) => {
           </button></Link>
         </div>
       </div>
+      
+      <span>Prix entre :</span>
+      
+      
+              
       <div className="line"></div>
+     
       <div>
+     
         <button className="button-inside">Hommes</button>
         <button>Femmes</button>
         <button>Enfants</button>
@@ -43,6 +59,8 @@ const Header = ({ token, setUser }) => {
         <button>Notre plateforme</button>
       </div>
     </div>
+   
+    </>
   );
 };
 
